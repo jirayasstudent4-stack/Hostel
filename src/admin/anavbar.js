@@ -7,47 +7,56 @@ import NavLink from "./anavlink";
 
 function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
-  const location = useLocation(); // React Router's useLocation hook
+  const location = useLocation();
 
   const toggleNavbar = () => {
-    setOpenLinks(!openLinks);
+    setOpenLinks((prev) => !prev);
   };
-
-
 
   return (
     <div className="navbar">
       <div className={`leftSide ${openLinks ? "open" : "close"}`}>
         <div className="logoWithText">
-          <a href="https://www.fcrit.ac.in/" target="_blank" rel="noopener noreferrer">
-            <img src={Logo} alt="FCRIT Logo"/>
+          <a
+            href="https://www.fcrit.ac.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Logo} alt="FCRIT Logo" />
           </a>
-          {/* <span className="logoText"><b>HOSTEL MANAGEMENT SYSTEM</b></span> */}
         </div>
+
         <div className="hiddenLinks">
-          <Link to="/ahome"> Home </Link>
-          <Link to="/vacl"> Vacation Leave </Link>
-          <Link to=""> Contact </Link>
+          <Link to="/ahome">Home</Link>
+          <Link to="/vacl">Vacation Leave</Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
+
       <div className="rightSide">
         <button onClick={toggleNavbar}>
           <ReorderIcon />
         </button>
+
         <div className="navbar-links">
-          <NavLink to="/ahome" label="Home" currentPath={location.pathname} />
-          <NavLink to="/vacl" label="Vacation Leave" currentPath={location.pathname} />
+          <NavLink
+            to="/ahome"
+            label="Home"
+            currentPath={location.pathname}
+          />
+          <NavLink
+            to="/vacl"
+            label="Vacation Leave"
+            currentPath={location.pathname}
+          />
         </div>
-        
-        {/* Add the Log Out button */}
+
         <Link to="/alogin">
-        <button className="logout-button">Log Out</button>
+          <button className="logout-button">Log Out</button>
         </Link>
-        </div>
-      
+      </div>
     </div>
   );
 }
 
 export default Navbar;
-
