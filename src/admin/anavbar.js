@@ -4,7 +4,6 @@ import ReorderIcon from "@material-ui/icons/Reorder";
 import "./styles/anavbar.css";
 import Logo from "../assets/fcritl.png";
 import NavLink from "./anavlink";
-import myLogo from "../assets/myLogo.png";
 
 function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
@@ -14,12 +13,7 @@ function Navbar() {
     setOpenLinks(!openLinks);
   };
 
-  const handleLogout = () => {
-    // Implement the logout logic here
-    // For example, clear the user's session or token
-    // Redirect to the login page, etc.
-    window.location.href = "/alogin";
-  };
+
 
   return (
     <div className="navbar">
