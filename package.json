@@ -2,7 +2,6 @@
   "name": "react-website-tut",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jayasuryamsd8-source.github.io/Hostel",
   "proxy": "http://localhost:5000",
 
   "dependencies": {
